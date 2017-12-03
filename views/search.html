@@ -1,0 +1,46 @@
+<!--Main Wrapper for page Starts Here-->
+      
+        <div class="row">
+        
+        <!--top nav starts here-->
+          <div class="col-lg-12 col-md-12 col-sm-12 top_nav">
+              <span class="back_btn">
+                 <a href="#/"> <img src="assets/img/back-arrow.png"/></a>
+                </span>
+                <div class="col-lg-12">
+                    <p style="font-size:22px;">Search Results</p>
+                    <p style="font-size:14px; color:#f7bc5d;">{{movie}}...</p>
+                </div>
+            </div>
+         <!--top nav starts here--> 
+         
+         
+
+         <div class="col-sm-3"></div>
+         <div class="col-sm-6 results_area"> 
+
+            <div class="col-lg-12 results_area" style="text-align: center;" ng-show="isloading">
+              <img src="assets/img/loading.gif" class="img-responsive">
+            </div>
+         
+
+           <div class="alert alert-danger" ng-show="iserror">
+                  <strong>Error!</strong> {{error}}
+           </div>
+           
+            <div class="mov_result" ng-repeat="movie in movieresults | orderBy : '-Year'">
+              <a href="" ng-click="moviedetails(movie.imdbID)">
+              <img ng-if="movie.Poster==='N/A'" src="assets/img/noimage.png" class="img-responsive" />
+              <img ng-if="movie.Poster!=='N/A'" src="{{movie.Poster}}" class="img-responsive" />
+                <div class="col-lg-12 movie_short_info">
+                  <p class="title">{{movie.Title }}</p>
+                    <p class="release">Release Year:{{movie.Year}} </p>
+                </div>
+              </a>
+            </div>
+         </div>
+          
+          <div class="col-sm-3"></div>
+      </div>
+    
+    <!--Main Wrapper for page Ends Here-->

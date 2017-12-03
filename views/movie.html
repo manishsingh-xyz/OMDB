@@ -1,0 +1,35 @@
+<div class="row">
+          
+            
+
+            <div class="col-lg-4"></div>
+            <div class="col-lg-4 movieinfo">
+                <div class="back_arrow">
+                  <a href="" ng-click="goBack()"><img src="assets/img/back-arrow-circle.png" class="img-responsive"/></a>
+                </div>
+
+
+                <div class="col-lg-12 results_area" style="text-align: center;" ng-show="isloading">
+                  <img src="assets/img/loading.gif">
+                </div>
+                
+                <div class="alert alert-danger " ng-show="iserror">
+                    <strong>Error!</strong>{{error}}
+                </div>
+                <div class="col-lg-12 top_banner">
+                  <img src="{{moviedetails.Poster}}" alt="{{moviedetails.Title}}" class="img-responsive"/>
+                </div>            
+              
+                <div class="col-lg-12 info_bar">
+                    <h1>{{moviedetails.Title }}</h1>
+                    <p>Release Year:{{moviedetails.Year}}</p>
+                </div>
+              
+                <div class="col-lg-12 description">
+                    {{moviedetails.Plot}}
+                </div>
+            </div>
+           <div class="col-lg-4"></div>
+      </div>
+    
+    <!--Main Wrapper for page Ends Here-->
