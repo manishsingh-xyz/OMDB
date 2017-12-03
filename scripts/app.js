@@ -27,7 +27,7 @@ app.controller('searchCtrl', function($scope, $http,$location) {
 	$scope.isloading =true;
  	var geturl = $location.path().split(':');
  	$scope.movie = geturl[1];
-  	var apiurl = "http://www.omdbapi.com/?s="+$scope.movie;
+  	var apiurl = "https://www.omdbapi.com/?s="+$scope.movie;
 	  	
 	  	$http({
         		method : "GET",
@@ -65,7 +65,7 @@ app.controller('movieCtrl', function($scope, $http,$location) {
 	$scope.isloading =true;
  	var geturl = $location.path().split(':');
  	$scope.id = geturl[1];
-  	var apiurl = "http://www.omdbapi.com/?i="+$scope.id;
+  	var apiurl = "https://www.omdbapi.com/?i="+$scope.id;
 	  	
   		$http({
         		method : "GET",
